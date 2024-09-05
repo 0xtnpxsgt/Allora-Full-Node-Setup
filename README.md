@@ -2,8 +2,7 @@
 
 ![YF89_m8Y-CXUWHpX](https://github.com/user-attachments/assets/f73c4212-73b2-473d-8be9-c64a13a588f0)
 
-- You must need to buy a VPS for running Allora Worker
-- You can buy from : Contabo
+- You must need to buy a VPS for running Allora FULL NODE:
 - You should buy VPS which is fulfilling all these requirements : 
 ```bash
 Operating System : Ubuntu 22.04
