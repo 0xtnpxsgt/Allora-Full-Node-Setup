@@ -9,6 +9,6 @@ Recommended Hardware: 4 Cores, 8GB RAM, 200GB of storage (NVME)
 ```
 ```bash
 cd $HOME
-rm -rf alloraoneclickinstall.sh
+rm -rf install_allora.sh
 wget https://raw.githubusercontent.com/0xtnpxsgt/Allora-Full-Node-Setup/main/install_allora.sh && chmod +x install_allora.sh && ./install_allora.sh
 ```
