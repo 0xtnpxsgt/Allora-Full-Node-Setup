@@ -10,25 +10,30 @@ RESET="\033[0m"             # Reset to default color
 
 echo -e "${MAGENTA}Starting installation...${RESET}"
 
-# Update package list
-echo -e "${LIGHT_BLUE}Updating package list...${RESET}"
-sudo apt update
+# Update and install necessary dependencies
+echo -e "${LIGHT_BLUE}Updating and upgrading system packages...${RESET}"
+sudo apt-get update && sudo apt-get upgrade -y
+sudo apt-get install -y curl wget git nano jq
 
-# Install Git
-echo -e "${LIGHT_BLUE}Installing Git...${RESET}"
-sudo apt install git -y
-
-# Install required packages
-echo -e "${LIGHT_BLUE}Installing required packages...${RESET}"
-sudo apt-get install apt-transport-https ca-certificates curl software-properties-common jq -y
-
-# Add Docker repository and install Docker
-echo -e "${LIGHT_BLUE}Adding Docker repository...${RESET}"
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
-sudo apt-get update
+# Install Docker
 echo -e "${LIGHT_BLUE}Installing Docker...${RESET}"
-sudo apt-get install docker-ce -y
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt-get update
+sudo apt-get install -y docker-ce docker-ce-cli containerd.io
+docker version
+
+# Install Docker Compose
+echo -e "${LIGHT_BLUE}Installing Docker Compose...${RESET}"
+VER=$(curl -s https://api.github.com/repos/docker/compose/releases/latest | grep tag_name | cut -d '"' -f 4)
+curl -L "https://github.com/docker/compose/releases/download/$VER/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+chmod +x /usr/local/bin/docker-compose
+docker-compose --version
+
+# Add user to Docker group
+echo -e "${LIGHT_BLUE}Adding current user to the Docker group...${RESET}"
+sudo groupadd docker
+sudo usermod -aG docker $USER
 
 # Clone the repository
 echo -e "${LIGHT_BLUE}Cloning Allora Chain repository...${RESET}"
