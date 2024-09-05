@@ -13,12 +13,12 @@ rm -rf install_allora.sh
 wget https://raw.githubusercontent.com/0xtnpxsgt/Allora-Full-Node-Setup/main/install_allora.sh && chmod +x install_allora.sh && ./install_allora.sh
 ```
 
-# Check logs
+### Check logs
 ```bash
 docker compose logs -f
 ```
 
-# Check Sync Status
+### Check Sync Status
 ```bash
 curl -s http://localhost:26657/status | jq .
 ```
