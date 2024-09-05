@@ -1,6 +1,6 @@
 # Allora-Full-Node-Setup
 
-https://github.com/user-attachments/assets/714c3691-673b-4e35-8cc1-2385615f2cb4
+![YF89_m8Y-CXUWHpX](https://github.com/user-attachments/assets/f73c4212-73b2-473d-8be9-c64a13a588f0)
 
 - You must need to buy a VPS for running Allora Worker
 - You can buy from : Contabo
