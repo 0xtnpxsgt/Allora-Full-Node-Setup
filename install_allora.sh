@@ -43,9 +43,9 @@ git clone -b main https://github.com/allora-network/allora-chain.git
 cd allora-chain
 
 # Replace requirements.txt with docker-compose.yaml
-echo -e "${LIGHT_BLUE}Replacing requirements.txt with docker-compose.yaml...${RESET}"
-rm -rf requirements.txt
-wget -q https://raw.githubusercontent.com/0xtnpxsgt/Allora-Comprehensive-Guide/main/docker-compose.yaml -O /root/allora-chain/docker-compose.yaml
+echo -e "${LIGHT_BLUE}Replace with the new docker-compose.yaml...${RESET}"
+rm -rf docker-compose.yaml
+wget -q https://raw.githubusercontent.com/0xtnpxsgt/Allora-Full-Node-Setup/main/docker-compose.yaml -O /root/allora-chain/docker-compose.yaml
 
 # Pull and start Docker containers
 echo -e "${LIGHT_BLUE}Pulling Docker images and starting containers...${RESET}"
