@@ -8,6 +8,8 @@
 Operating System : Ubuntu 22.04
 Recommended Hardware: 4 Cores, 8GB RAM, 200GB of storage (NVME)
 ```
+### Automatic Installation
+
 ```bash
 cd $HOME
 rm -rf install_allora.sh
