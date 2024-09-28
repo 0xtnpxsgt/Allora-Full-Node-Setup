@@ -2,7 +2,7 @@
 services:
   allora-node:
     container_name: allora-node
-    image: "alloranetwork/allora-chain:v0.4.0" # docker image without cosmovisor. use vx.x.x-upgrader for upgrade image
+    image: "alloranetwork/allora-chain:v0.5.0" # docker image without cosmovisor. use vx.x.x-upgrader for upgrade image
     environment:
       - NETWORK=allora-testnet-1
       - MONIKER=RPCFULLNODE
